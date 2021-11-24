@@ -26,7 +26,7 @@ class CrearEmpresaController extends Controller
 
     public function index()
     {
-        $empresas= Empresa::get();
+        $empresas= Empresa::orderBy('nombre_empresa','ASC')->get();
         
         return view('listaEmp', compact('empresas'));
     }
