@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Empresa;
+use Illuminate\Support\Facades\DB;
 
 
 class CrearEmpresaController extends Controller
 {
-    protected function store(array $request)
+    protected function store(Request $request)
     {
         return Empresa::create([
             'nombre_empresa' => $request['name_emp'],
@@ -21,6 +22,13 @@ class CrearEmpresaController extends Controller
             'socios' => $request['socio'],
             
         ]);
+    }
+
+    public function index()
+    {
+        $empresas= Empresa::get();
+        
+        return view('listaEmp', compact('empresas'));
     }
 
 }
