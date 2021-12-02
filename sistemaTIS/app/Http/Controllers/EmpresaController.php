@@ -32,5 +32,48 @@ class EmpresaController extends Controller
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa registrada exitosamente.');
     }
+    public function show($id)
+    {
+        $empresas = Empresa::find($id);
+
+        return view('empresa.show', compact('empresa'));
+    }
+
+    public function edit($id)
+    {
+        $empresas = Empresa::find($id);
+
+        return view('empresa.edit', compact('empresa'));
+    }
+
+    public function update(Request $request, Empresa $empresas)
+    {
+        request()->validate(Empresa::$rules);
+
+        $empresas->update($request->all());
+
+        return redirect()->route('empresas.index')
+            ->with('success', 'Empresa actualizada exitosamente');
+    }
+    public function destroy($id)
+    {
+        $empresa = Empresa::find($id)->delete();
+
+        return redirect()->route('empresas.index')
+            ->with('success', 'Empresa eliminada exitosamente');
+    }
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'nombre_empresa'=> ['required', 'string', 'max:50', 'unique:empresas'],
+            'nombre_corto'=> ['required', 'string', 'max:10', 'unique:empresas'],
+            'tipo_empresa'=> ['required', 'string', 'max:50'],
+            'rep_empresa'=> ['required', 'string', 'max:50'],
+            'email_empresa'=> ['required', 'string', 'max:50', 'unique:empresas','email'],
+            'direccion'=> ['string', 'max:80'],
+            'telf_empresa'=> ['required','integer','digits_between:9,9'],
+            'socios'=> ['required', 'string', 'max:255'],
+        ]);
+    }
 
 }

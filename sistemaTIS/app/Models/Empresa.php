@@ -18,5 +18,5 @@ class Empresa extends Model
         'telf_empresa',
         'socios',
     ];
- 
+    
 }
