@@ -47,9 +47,9 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             <td>{{$convocatoria->tit_conv}}</td>
-                                            <td>{{$empresa->desc_conv}}</td>
-                                            <td>{{$empresa->f_ini}}</td>
-                                            <td>{{$empresa->f_fin}}</td>
+                                            <td>{{$convocatoria->desc_conv}}</td>
+                                            <td>{{$convocatoria->created_at}}</td>
+                                            <td>{{$convocatoria->f_fin}}</td>
 
                                             <td>
                                                 <form action="{{ route('convocatorias.destroy',$convocatoria->id) }}" method="POST">
