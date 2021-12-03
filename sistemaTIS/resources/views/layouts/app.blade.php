@@ -64,11 +64,11 @@
                         <li class="{{ Request::path() == 'convocatorias' ? 'nav-item active' : 'nav-item' }}">
                             <a class="nav-link " href="{{ route('convocatorias') }}">Convocatorias</a>
                         </li>
-                        <li class="{{ Request::path() == 'listEmpresa' ? 'nav-item active' : 'nav-item' }}">
-                            <a class="nav-link" href="{{ route('listEmpresa') }}"> Listar Empresas</a>
+                        <li class="{{ Request::path() == 'empresas' ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ route('empresas.index') }}"> Listar Empresas</a>
                         </li>
-                        <li class="{{ Request::path() == 'listEmpresa' ? 'nav-item active' : 'nav-item' }}">
-                            <a class="nav-link" href="{{ route('listEmpresa') }}">Agregar Empresa</a>
+                        <li class="{{ Request::path() == 'empresas/create' ? 'nav-item active' : 'nav-item' }}">
+                            <a class="nav-link" href="{{ route('empresas.create') }}">Agregar Empresa</a>
                         </li>            
                         <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

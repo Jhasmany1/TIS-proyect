@@ -20,7 +20,7 @@ class EmpresaController extends Controller
     public function create()
     {
         $empresas = new Empresa();
-        return view('empresa.create', compact('empresa'));
+        return view('empresa.create', compact('empresas'));
     }
 
     public function store(Request $request)

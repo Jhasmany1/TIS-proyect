@@ -18,5 +18,15 @@ class Empresa extends Model
         'telf_empresa',
         'socios',
     ];
+    public static $rules = array(
+        'nombre_empresa'=> ['required', 'string', 'max:50', 'unique:empresas'],
+        'nombre_corto'=> ['required', 'string', 'max:10', 'unique:empresas'],
+        'tipo_empresa'=> ['required', 'string', 'max:50'],
+        'rep_empresa'=> ['required', 'string', 'max:50'],
+        'email_empresa'=> ['required', 'string', 'max:50', 'unique:empresas','email'],
+        'direccion'=> ['string', 'max:80'],
+        'telf_empresa'=> ['required','integer','digits_between:9,9'],
+        'socios'=> ['required', 'string', 'max:255'],
+    );
     
 }

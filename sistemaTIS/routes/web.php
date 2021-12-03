@@ -29,15 +29,14 @@ Route::get('/', function () {
 // Route::get('/listEmpresas', App\Http\Controllers\CrearEmpresaController@index);
 // Route::post('empresas', App\Http\Controllers\CrearEmpresaController@store);
 
-Route::get('/listaEmp', [App\Http\Controllers\CrearEmpresaController::class, 'index'])->name('listEmpresa');
-Route::resource('empresas',[App\Http\Controllers\CrearEmpresaController::class, 'store'])->name('addEmpresa');
-
 Route::get('/convocatorias',function(){
     return view('convocatoria');
     
 })->name('convocatorias');
 /*---------------------------------------------------------------------*/
 Auth::routes();
+
+Route::resource('/empresas',App\Http\Controllers\EmpresaController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

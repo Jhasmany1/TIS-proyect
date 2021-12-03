@@ -1,30 +1,26 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Create Documentacion
+    Crear grupo empresa
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-
-                @includeif('partials.errors')
-
-                <div class="card card-default">
-                    <div class="card-header">
-                        <span class="card-title">Create Documentacion</span>
-                    </div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('documentacions.store') }}"  role="form" enctype="multipart/form-data">
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            @includeif('partials.errors')
+            <div class="card">
+                <div class="card-header">{{ __('Registrar Grupo Empresa') }}</div>
+                <div class="card-body">
+                    
+                        <form method="POST" action="{{ route('empresas.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
-
-                            @include('documentacion.form')
-
+                            @include('empresa.form')
                         </form>
-                    </div>
+                 </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</div>
 @endsection

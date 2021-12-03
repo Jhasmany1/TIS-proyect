@@ -23,7 +23,7 @@
           <div class="down-content">
             <h4>Empresas</h4>
             <p>Para ver las empresas registradas o registrar una nueva ingrese aqui.</p>
-            <a href="{{ route('listEmpresa') }}" class="filled-button">Ver mas</a>
+            <a href="{{ route('empresas.index') }}" class="filled-button">Ver mas</a>
           </div>
         </div>
       </div>

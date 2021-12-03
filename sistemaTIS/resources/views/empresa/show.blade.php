@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $documentacion->name ?? 'Show Documentacion' }}
+    {{ $empresa->name ?? 'Ver Empresa' }}
 @endsection
 
 @section('content')
@@ -11,24 +11,43 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Documentacion</span>
+                            <span class="card-title">Ver Empresa</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('documentacions.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('empresas.index') }}"> Volver</a>
                         </div>
                     </div>
 
                     <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Sobrea:</strong>
-                            {{ $documentacion->SobreA }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Sobreb:</strong>
-                            {{ $documentacion->sobreB }}
-                        </div>
 
+                        <div class="form-group">
+                            <strong>Nombre de la empresa</strong>
+                            {{ $empresa->nombre_empresa }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Nombre corto</strong>
+                            {{ $empresa->nombre_corto }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Tipo de sociedad</strong>
+                            {{ $empresa->tipo_empresa }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Representante legal</strong>
+                            {{ $empresa->rep_empresa }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Correo de la empresa</strong>
+                            {{ $empresa->email_empresa }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Telefono</strong>
+                            {{ $empresa->telf_empresa }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Socios</strong>
+                            {{ $empresa->socios }}
+                        </div>
                     </div>
                 </div>
             </div>
