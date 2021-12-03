@@ -19,29 +19,29 @@ class EmpresaController extends Controller
 
     public function create()
     {
-        $empresas = new Empresa();
-        return view('empresa.create', compact('empresas'));
+        $empresa = new Empresa();
+        return view('empresa.create', compact('empresa'));
     }
 
     public function store(Request $request)
     {
         request()->validate(Empresa::$rules);
 
-        $empresas = Empresa::create($request->all());
+        $empresa = Empresa::create($request->all());
 
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa registrada exitosamente.');
     }
     public function show($id)
     {
-        $empresas = Empresa::find($id);
+        $empresa = Empresa::find($id);
 
         return view('empresa.show', compact('empresa'));
     }
 
     public function edit($id)
     {
-        $empresas = Empresa::find($id);
+        $empresa = Empresa::find($id);
 
         return view('empresa.edit', compact('empresa'));
     }
@@ -50,7 +50,7 @@ class EmpresaController extends Controller
     {
         request()->validate(Empresa::$rules);
 
-        $empresas->update($request->all());
+        $empresa->update($request->all());
 
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa actualizada exitosamente');

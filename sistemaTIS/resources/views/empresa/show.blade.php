@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $empresa->name ?? 'Ver Empresa' }}
+    {{ $empresa->nombre_empresa ?? 'Ver Empresa' }}
 @endsection
 
 @section('content')

@@ -34,6 +34,7 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
+                                        <th>Codigo</th>
                                         <th>Nombre</th>
                                         <th>Tipo de empresa</th>
                                         <th>Representante</th>
@@ -51,7 +52,7 @@
                                             <td>{{ ++$i }}</td>
                                             <td>{{$empresa->nombre_empresa}}</td>
                                             <td>{{$empresa->tipo_empresa}}</td>
-                                            <td>{{$empresa->resp_empresa}}</td>
+                                            <td>{{$empresa->rep_empresa}}</td>
                                             <td>{{$empresa->email_empresa}}</td>
                                             <td>{{$empresa->telf_empresa}}</td>
                                             <td>{{$empresa->socios}}</td>

@@ -18,7 +18,7 @@ class CreateEmpresasTable extends Migration
             $table->string('nombre_empresa')->unique()->required();
             $table->string('nombre_corto')->required();
             $table->string('tipo_empresa')->required();
-            $table->string('resp_empresa')->required();
+            $table->string('rep_empresa')->required();
             $table->string('email_empresa')->required();
             $table->string('direccion')->required();
             $table->string('telf_empresa')->required();
