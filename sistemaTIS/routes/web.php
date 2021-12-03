@@ -17,26 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 /* Rutas de los links--------------------------------------------------- */
-// Route::get('/addEmpresa',function(){
-//     return view('addEmpresa');
-    
-// })->name('addEmpresa');
 
-// Route::get('/listEmpresas',function(){
-//      return view('listEmp');
-    
-// })->name('listEmpresa');
-// Route::get('/listEmpresas', App\Http\Controllers\CrearEmpresaController@index);
-// Route::post('empresas', App\Http\Controllers\CrearEmpresaController@store);
-
-Route::get('/convocatorias',function(){
-    return view('convocatoria');
-    
-})->name('convocatorias');
 /*---------------------------------------------------------------------*/
 Auth::routes();
 
 Route::resource('/empresas',App\Http\Controllers\EmpresaController::class);
+Route::resource('/convocatorias',App\Http\Controllers\ConvocatoriaController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

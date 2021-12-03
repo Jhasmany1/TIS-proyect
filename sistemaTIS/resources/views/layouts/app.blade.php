@@ -62,7 +62,7 @@
                             <a class="nav-link " href="{{ url('/home') }}" >Inicio</a>
                         </li>
                         <li class="{{ Request::path() == 'convocatorias' ? 'nav-item active' : 'nav-item' }}">
-                            <a class="nav-link " href="{{ route('convocatorias') }}">Convocatorias</a>
+                            <a class="nav-link " href="{{ route('convocatorias.index') }}">Convocatorias</a>
                         </li>
                         <li class="{{ Request::path() == 'empresas' ? 'nav-item active' : 'nav-item' }}">
                             <a class="nav-link" href="{{ route('empresas.index') }}"> Listar Empresas</a>
