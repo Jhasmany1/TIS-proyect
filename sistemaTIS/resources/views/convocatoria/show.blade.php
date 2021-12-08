@@ -31,15 +31,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Descripcion de la convocatoria</strong>
-                            {{ $empresa->desc_conv }}
+                            {{ $convocatoria->desc_conv }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha de publicacion</strong>
-                            {{ $empresa->created_at }}
+                            {{ $convocatoria->created_at }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha de finalizacion</strong>
-                            {{ $empresa->f_fin }}
+                            {{ $convocatoria->f_fin }}
                         
                     </div>
                 </div>

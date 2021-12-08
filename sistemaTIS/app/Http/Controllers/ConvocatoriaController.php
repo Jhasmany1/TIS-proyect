@@ -46,7 +46,7 @@ class ConvocatoriaController extends Controller
         return view('convocatoria.edit', compact('convocatoria'));
     }
 
-    public function update(Request $request, Convocatoria $convocatorias)
+    public function update(Request $request, Convocatoria $convocatoria)
     {
         request()->validate(Convocatoria::$rules);
 

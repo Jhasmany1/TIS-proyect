@@ -18,27 +18,27 @@
         </div>
         <div class="form-group">
             {{ Form::label('Representate legal') }}
-            {{ Form::text('rep_empresa', $empresa->rep_empresa, ['class' => 'form-control' . ($errors->has('rep_empresa') ? ' is-invalid' : ''), 'placeholder' => 'Sobreb']) }}
+            {{ Form::text('rep_empresa', $empresa->rep_empresa, ['class' => 'form-control' . ($errors->has('rep_empresa') ? ' is-invalid' : '')]) }}
             {!! $errors->first('rep_empresa', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Email de la empresa') }}
-            {{ Form::text('email_empresa', $empresa->email_empresa, ['class' => 'form-control' . ($errors->has('email_empresa') ? ' is-invalid' : ''), 'placeholder' => 'Sobreb']) }}
+            {{ Form::text('email_empresa', $empresa->email_empresa, ['class' => 'form-control' . ($errors->has('email_empresa') ? ' is-invalid' : '')]) }}
             {!! $errors->first('email_empresa', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Direccion de la empresa') }}
-            {{ Form::text('direccion', $empresa->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : ''), 'placeholder' => 'Sobreb']) }}
+            {{ Form::text('direccion', $empresa->direccion, ['class' => 'form-control' . ($errors->has('direccion') ? ' is-invalid' : '')]) }}
             {!! $errors->first('direccion', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Telefono de la empresa') }}
-            {{ Form::text('telf_empresa', $empresa->telf_empresa, ['class' => 'form-control' . ($errors->has('telf_empresa') ? ' is-invalid' : ''), 'placeholder' => 'Sobreb']) }}
+            {{ Form::text('telf_empresa', $empresa->telf_empresa, ['class' => 'form-control' . ($errors->has('telf_empresa') ? ' is-invalid' : '')]) }}
             {!! $errors->first('telf_empresa', '<div class="invalid-feedback">:message</p>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Socios de la empresa') }}
-            {{ Form::text('socios', $empresa->socios, ['class' => 'form-control' . ($errors->has('socios') ? ' is-invalid' : ''), 'placeholder' => 'Sobreb']) }}
+            {{ Form::text('socios', $empresa->socios, ['class' => 'form-control' . ($errors->has('socios') ? ' is-invalid' : '')]) }}
             {!! $errors->first('socios', '<div class="invalid-feedback">:message</p>') !!}
         </div>
     </div>
