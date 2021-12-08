@@ -16,6 +16,7 @@
             {{ Form::date('f_fin', $convocatoria->f_fin, ['class' => 'form-control' . ($errors->has('f_fin') ? ' is-invalid' : '')]) }}
             {!! $errors->first('f_fin', '<div class="invalid-feedback">:message</p>') !!}
         </div>
+        
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">Registrar</button>
