@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-/* Rutas de los links--------------------------------------------------- */
+/* Rutas de los usuarios--------------------------------------------------- */
+
+Route::resource('/users', UserController::class);
+
+Route::resource('/grupos', GrupoController::class);
 
 /*---------------------------------------------------------------------*/
 Auth::routes();

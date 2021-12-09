@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="container">
+  <h2 class="text-center">Bienvenido {{ Auth::user()->name }}</h2>
     <div class="row">
       <div class="col-md-4">
         <div class="service-item">

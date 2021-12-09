@@ -26,7 +26,7 @@ class Consultor
                    return redirect('users');// si es un usuario normal redirige a la ruta USER
                break;	
                case ('3'):
-                   return redirect('moders');//si es administrador redirige al moderador
+                   return redirect('grupos');//si es administrador redirige al moderador
                break;
            }
        }

@@ -9,8 +9,14 @@ use Illuminate\Support\Facades\DB;
 
 class ConvocatoriaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
+        
+        
         $convocatorias = Convocatoria::paginate();
 
         return view('convocatoria.index', compact('convocatorias'))
@@ -18,7 +24,7 @@ class ConvocatoriaController extends Controller
     }
 
     public function create()
-    {
+    {        
         $convocatoria = new Convocatoria();
         return view('convocatoria.create', compact('convocatoria'));
     }

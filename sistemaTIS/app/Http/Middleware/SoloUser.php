@@ -26,7 +26,7 @@ class SoloUser
                 return $next($request);// si es un usuario continua ruta USER
 			break;	
             case ('3'):
-                return redirect('moders');//si es administrador redirige al moderador
+                return redirect('grupos');//si es administrador redirige al moderador
             break;
         }
     }
