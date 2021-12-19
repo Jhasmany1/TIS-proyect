@@ -1,13 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use App\Models\Convocatoria;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+use App\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 
-class ConvocatoriaController extends Controller
+class UsuarioController extends Controller
 {
     public function __construct()
     {
@@ -16,32 +20,34 @@ class ConvocatoriaController extends Controller
     }
     public function index()
     {
-        $convocatorias = Convocatoria::paginate();
         
-        return view('convocatoria.index', compact('convocatorias'))
-            ->with('i', (request()->input('page', 1) - 1) * $convocatorias->perPage());
+        
+        $users = User::paginate();
+        
+        return view('usuario.index', compact('usuarios'))
+            ->with('i', (request()->input('page', 1) - 1) * $usuarios->perPage());
     }
 
     public function create()
     {        
-        $convocatoria = new Convocatoria();
-        return view('convocatoria.create', compact('convocatoria'));
+        $usuario = new User();
+        return view('usuario.create', compact('usuario'));
     }
 
     public function store(Request $request)
     {
-        request()->validate(Convocatoria::$rules);
+        request()->validate(User::$rules);
 
-        $convocatoria = Convocatoria::create($request->all());
+        $usuario = User::create($request->all());
 
-        return redirect()->route('convocatorias.index')
-            ->with('success', 'Convocatoria registrada exitosamente.');
+        return redirect()->route('usuarios.index')
+            ->with('success', 'Consultor registrado exitosamente.');
     }
     public function show($id)
     {
-        $convocatoria = Convocatoria::find($id);
+        $usuario = User::find($id);
 
-        return view('convocatoria.show', compact('convocatoria'));
+        return view('usuario.show', compact('usuario'));
     }
 
     public function edit($id)

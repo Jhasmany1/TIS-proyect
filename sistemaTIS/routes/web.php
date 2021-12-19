@@ -29,6 +29,5 @@ Auth::routes();
 
 Route::resource('/empresas',App\Http\Controllers\EmpresaController::class);
 Route::resource('/convocatorias',App\Http\Controllers\ConvocatoriaController::class);
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

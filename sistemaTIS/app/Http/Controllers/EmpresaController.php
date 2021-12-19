@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Empresa;
+use App\Models\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\DB;
 
 
@@ -12,6 +15,9 @@ class EmpresaController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('solouser', ['only' => ['create','store']]);
+        $this->middleware('sologrupo', ['only' => ['edit','update', 'destroy']]);
+        //$this->middleware('solouser', ['except' => ['index','show']]);
     }
     public function index()
     {
@@ -29,8 +35,10 @@ class EmpresaController extends Controller
 
     public function store(Request $request)
     {
+        $id = Auth::user()->id; 
         request()->validate(Empresa::$rules);
-
+        $user = User::find($id);
+        $user->update(['tipo' => '3']);
         $empresa = Empresa::create($request->all());
 
         return redirect()->route('empresas.index')
@@ -50,7 +58,7 @@ class EmpresaController extends Controller
         return view('empresa.edit', compact('empresa'));
     }
 
-    public function update(Request $request, Empresa $empresas)
+    public function update(Request $request, Empresa $empresa)
     {
         request()->validate(Empresa::$rules);
 
@@ -62,7 +70,9 @@ class EmpresaController extends Controller
     public function destroy($id)
     {
         $empresa = Empresa::find($id)->delete();
-
+        $id = Auth::user()->id; 
+        $user = User::find($id);
+        $user->update(['tipo' => '2']);
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa eliminada exitosamente');
     }
