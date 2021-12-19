@@ -13,4 +13,5 @@ class Sobre extends Model
         'sobre_a',
         'sobre_b'
     ];
+    
 }
