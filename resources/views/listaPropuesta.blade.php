@@ -24,7 +24,6 @@
                             </thead>
                             <tbody>
                                @foreach ($files as $item)
-
                                 <tr>
                                     <td>nombre_empresa</td>
                                     <td>{{$item->created_at}}</td>
