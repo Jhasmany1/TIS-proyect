@@ -14,7 +14,6 @@ class SobreController extends Controller
         $files = Sobre::all();
         return view('listaPropuesta',compact('files'));
     }
-
     public function create()
     {
         //
