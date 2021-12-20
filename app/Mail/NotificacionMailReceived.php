@@ -11,17 +11,14 @@ class NotificacionMailReceived extends Mailable
 {
     use Queueable, SerializesModels;
 
-
-
-    public $distressCall;
-
-    public function __construct(DistressCall $distressCall)
+    public function __construct($contacto)
     {
-        $this->distressCall = $distressCall;
+        $this->contacto = $contacto;
     }
 
     public function build()
     {
-        return $this->view('mails.listaPropuestas');
+        //
     }
+
 }
