@@ -62,12 +62,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::post('/addPropuesta', [App\Http\Controllers\SobreController::class, 'store']);
 Route::get('/listaPropuesta', [App\Http\Controllers\SobreController::class, 'index']);
-Route::get('/listaPropuesta/{id?}', [App\Http\Controllers\SobreController::class, 'download']);
+
+
 
 /*-----------------------Ruta envio de correos---------------------------*/
 
-/*::get('empresas',function(){
-    $correo = new NotificacionMailReceived;
-    Mail::to($correo)->send(new NotificacionMailReceived($mensaje));
-    
-});*/
+Route::post('listaPropuesta', [App\Http\Controllers\MensajeController::class, 'store']);
