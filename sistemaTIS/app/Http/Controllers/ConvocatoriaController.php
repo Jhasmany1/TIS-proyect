@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Convocatoria;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class ConvocatoriaController extends Controller
 {
@@ -33,7 +33,9 @@ class ConvocatoriaController extends Controller
         request()->validate(Convocatoria::$rules);
 
         $convocatoria = Convocatoria::create($request->all());
-
+        $id = Auth::user()->id;
+        $convocatoria->id_consultor=$id;
+        $convocatoria->save();
         return redirect()->route('convocatorias.index')
             ->with('success', 'Convocatoria registrada exitosamente.');
     }

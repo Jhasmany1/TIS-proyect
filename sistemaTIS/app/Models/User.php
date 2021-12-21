@@ -48,4 +48,8 @@ class User extends Authenticatable
     public function empresas(){
         return $this->belongsTo(Empresa::class,'id');
     }
+    public function convocatorias()
+    {
+        return $this->hasMany(Convocatoria::class,'id');
+    }
 }

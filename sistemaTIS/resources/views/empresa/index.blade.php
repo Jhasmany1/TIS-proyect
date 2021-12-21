@@ -64,7 +64,7 @@
                                             <td>
                                                 <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('empresas.show',$empresa->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    @if (Auth::user()->tipo == '3')                                                     
+                                                    @if (Auth::user()->id_grupo == $empresa->id)                                                     
                                                     
                                                     <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf

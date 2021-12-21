@@ -58,13 +58,13 @@
                                             <td>
                                                 <form action="{{ route('convocatorias.destroy',$convocatoria->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('convocatorias.show',$convocatoria->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
-                                                    @if (Auth::user()->tipo == '1')
+                                                    @if (Auth::user()->id == $convocatoria->id_consultor)
                                                     <a class="btn btn-sm btn-success" href="{{ route('convocatorias.edit',$convocatoria->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>    
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                     @endif
-                                                    </form>
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

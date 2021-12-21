@@ -14,8 +14,17 @@
                             <span class="card-title">Ver Empresa</span>
                         </div>
                         <div class="float-right">                            
-                            <a class="btn btn-sm btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                            <form action="{{ route('empresas.destroy',$empresa->id) }}" method="POST">                        
+                            @if (Auth::user()->id_grupo == $empresa->id)                                                     
+                                <a class="btn btn-success" href="{{ route('empresas.edit',$empresa->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                            
+                            @endif
+                            
                             <a class="btn btn-primary" href="{{ route('empresas.index') }}"> Volver</a>
+                        </form>
                         </div>
                     </div>
 

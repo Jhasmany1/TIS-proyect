@@ -14,7 +14,17 @@
                             <span class="card-title">Ver Convocatoria</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('convocatorias.index') }}"> Volver</a>
+                            <form action="{{ route('convocatorias.destroy',$convocatoria->id) }}" method="POST">
+                                 @if (Auth::user()->id == $convocatoria->id_consultor)
+                                <a class="btn btn-success" href="{{ route('convocatorias.edit',$convocatoria->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>    
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
+                                
+                                @endif
+                                <a class="btn btn-primary" href="{{ route('convocatorias.index') }}"> Volver</a>
+                            </form>
+                            
                         </div>
                     </div>
 

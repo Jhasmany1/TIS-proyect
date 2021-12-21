@@ -123,8 +123,24 @@
                                 <li class="{{ Request::path() == 'convocatorias' ? 'nav-item active' : 'nav-item' }}">
                                     <a class="nav-link " href="{{ route('convocatorias.index') }}">Convocatorias</a>
                                 </li>
-                                <li class="{{ Request::path() == 'empresas' ? 'nav-item active' : 'nav-item' }}">
-                                    <a class="nav-link" href="{{ route('empresas.index') }}"> Listar Empresas</a>
+                                @if (Request::path() == 'empresas' || Request::path() == 'empresas/{{Auth::user()->id_grupo}}')
+                                        <li class="nav-item dropdown active">    
+                                    
+                                    @else
+                                        <li class="nav-item dropdown">
+                                    @endif
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        Empresas
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('empresas.index') }}">
+                                            {{ __('Ver empresas') }}
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('empresas.show',Auth::user()->id_grupo) }}">
+                                            {{ __('Mi grupo empresa') }}
+                                        </a>
+                                        
+                                    </div>
                                 </li>
                                 @endif
 
