@@ -11,11 +11,28 @@
             {{ Form::text('nombre_corto', $empresa->nombre_corto, ['class' => 'form-control' . ($errors->has('nombre_corto') ? ' is-invalid' : '')]) }}
             {!! $errors->first('nombre_corto', '<div class="invalid-feedback">:message</p>') !!}
         </div>
-        <div class="form-group">
+        {{-- <div class="form-group">
             {{ Form::label('Tipo de sociedad') }}
             {{ Form::text('tipo_empresa', $empresa->tipo_empresa, ['class' => 'form-control' . ($errors->has('tipo_empresa') ? ' is-invalid' : '')]) }}
             {!! $errors->first('tipo_empresa', '<div class="invalid-feedback">:message</p>') !!}
+        </div> --}}
+
+        <div class="form-group">
+            <label for="tipo_empresa" class="">{{ __('Tipo de sociedad') }}</label>
+                <select id="tipo_empresa" class="form-control @error('tipo_empresa') is-invalid @enderror" name="tipo_empresa" required autocomplete="tipo_empresa">
+                    <option>Responsabilidad Limitada</option>
+                    <option>Anónima</option>
+                    <option>Colectiva</option>
+                    <option>Comandita Simple o por Acciones</option>
+                </select>
+                @error('tipo_empresa')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            
         </div>
+
         <div class="form-group">
             {{ Form::label('Representate legal') }}
             {{ Form::text('rep_empresa', $empresa->rep_empresa, ['class' => 'form-control' . ($errors->has('rep_empresa') ? ' is-invalid' : '')]) }}
