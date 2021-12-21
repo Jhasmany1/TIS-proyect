@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
 
 
-class UsuarioController extends Controller
+class ConsultorController extends Controller
 {
     public function __construct()
     {
@@ -46,7 +46,6 @@ class UsuarioController extends Controller
     public function show($id)
     {
         $usuario = User::find($id);
-
         return view('usuario.show', compact('usuario'));
     }
 

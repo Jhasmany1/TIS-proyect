@@ -24,6 +24,8 @@ class CreateEmpresasTable extends Migration
             $table->string('telf_empresa')->required();
             $table->string('socios')->required();
             $table->timestamps();
+
+            
         });
     }
 

@@ -40,7 +40,8 @@ class EmpresaController extends Controller
         $user = User::find($id);
         $user->update(['tipo' => '3']);
         $empresa = Empresa::create($request->all());
-
+        $user->id_grupo=$empresa->id;
+        $user->save();
         return redirect()->route('empresas.index')
             ->with('success', 'Empresa registrada exitosamente.');
     }
@@ -86,7 +87,7 @@ class EmpresaController extends Controller
             'email_empresa'=> ['required', 'string', 'max:50', 'unique:empresas','email'],
             'direccion'=> ['string', 'max:80'],
             'telf_empresa'=> ['required','integer','digits_between:9,9'],
-            'socios'=> ['required', 'string', 'max:255'],
+            'socios'=> ['string', 'max:255'],
         ]);
     }
 
