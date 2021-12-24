@@ -60,6 +60,6 @@
         </div>
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="btn btn-dark">Registrar</button>
     </div>
 </div>
